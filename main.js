@@ -37,6 +37,7 @@ const text = document.createElement('p')
 text.textContent = 'INI ADALAH TEXT DARI BUTTON 2'
 
 function munculText(){
+    text.style.color = 'black'
     body.append(text)
 }
 
