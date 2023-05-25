@@ -1,48 +1,87 @@
-document.title = 'Web diubah oleh DOM'
+// ARRAY
 
+const hari1 = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu']
 
-// styling
-const btn1 = document.getElementById('btn-1') // spesifik memanggil ID
-const btn2 = document.querySelector('.btn-2') // memanggil elemen secara universal (menggunakan titik seperti css untuk class)
-const body = document.body
+// const hari2 = []
+// hari2[0] = 'Rabu'
+// hari2[1] = 'Kamis'
+// hari2[2] = 'Jumat'
 
-//default text
-const defaultText = 'Button 1'
-btn1.textContent = defaultText
+// console.log(hari2)
 
-// styling sedikit mengambil dari css
-btn1.style.border = 'none' 
-btn1.style.padding = '8px'
-btn1.style.fontSize = '24px'
-btn1.style.background = 'aqua'
+// const hari3 = new Array('Sabtu','Minggu')
+// console.log(hari3)
 
-function onClick(){
-    btn1.style.background = 'tomato'
-    // memunculkan text ketika button diclick
-    const textBaru = document.createElement('h1')
-    textBaru.textContent = 'Kamu udah click button itu'
-    body.append(textBaru)
-}
+// const kamis = hari1.includes('Kamis') //variable untuk cek apakah kamis ada di array hari1
+// console.log(kamis) // hasilnya true
 
-function ubahText(){
-    btn1.textContent = 'hehe haha'
-}
+// if(kamis){ //jika kamis bernilai true
+//     const posisiKamis = hari1.indexOf('Kamis') //untuk mengetahui kamis berada di index ke berapa dari hari1
+//     // mencari posisi index array
+//     const indexBefore = posisiKamis - 1
+//     const indexAfter = posisiKamis + 1
+//     const before = hari1[indexBefore]
+//     const after = hari1[indexAfter]
+//     console.log(`hari sebelum hari kamis adalah hari ${before}`)
+//     console.log(`hari setelah hari kamis adalah hari ${after}`)
+//     console.log(`hari kamis itu berada di posisi index ke-${posisiKamis}`)
+//     //menentukan index awal dan akhir
+//     const hariPertama = hari1.shift()
+//     console.log(`hari pertama adalah hari ${hariPertama}`)
+//     const hariTerakhir = hari1.pop()
+//     console.log(`hari terakhir adalah hari ${hariTerakhir}`)
+// } else{
+//     console.log('saya tidak tau posisinya dimana')
+// }
 
-function oriText(){
-    btn1.textContent = defaultText
-}
+const arrayBaru = [900, 'senin', {tomat:function(){console.log('ini tomat')}}, ['pisang','jeruk']]
+console.log(arrayBaru)
+console.log(arrayBaru[3][1]) // array 2 dimensi
+console.log(arrayBaru[2].tomat) //memanggil objek/function pada array
 
-// latihan
-const text = document.createElement('p')
-text.textContent = 'INI ADALAH TEXT DARI BUTTON 2'
+//menggabungkan 2 array
+const hariBiasa = ['Senin','Selasa','Rabu']
+const hariLibur = ['Sabtu','Minggu']
 
-function munculText(){
-    text.style.color = 'black'
-    body.append(text)
-}
+const mergeArray = hariBiasa.concat(hariLibur) // concat untuk menggabungkan array
+console.log(mergeArray)
 
-function gantiText(){
-    const gantiWarna = text
-    text.style.color = 'tomato'
-    body.append(text)
-}
+//mengurutkan array
+mergeArray.map((value, index) => console.log(index,value))
+
+//data dari backend/API
+const datas = [
+    {
+        name: 'asep',
+        pekerjaan: 'kuli',
+        umur: 25
+    },
+    {
+        name: 'aldo',
+        pekerjaan: 'artis',
+        umur: 28
+    },
+    {
+        name: 'rusdi',
+        pekerjaan: 'barber',
+        umur: 23
+    },
+    {
+        name: 'budi',
+        pekerjaan: 'guru',
+        umur: 35
+    }
+]
+
+// munculkan semua data
+datas.map((values,index)=>{
+    console.log(values)
+})
+//memunculkan list namanya saja
+datas.map((values,index)=>{
+        console.log(values.name)
+    })
+//sorting data
+datas.sort((a,b) => a.umur - b.umur).map((values)=>console.log(values))
+//filter data
+datas.filter((x) => x.umur > 30).map((values)=>console.log(values))
