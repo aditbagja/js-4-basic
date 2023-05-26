@@ -9,6 +9,7 @@
 // for looping
 
 // 3 statement
+// for(//statement 1 (kondisi awal); //statemen 2 (kondisi); //statement 3 (apa yang akan dilakukan ?))
 // for (let i = 1; i <= 10; i = i + 1){
 //     console.log('adit bagja')
 // }
